@@ -1,0 +1,121 @@
+composer create-project laravel/laravel example-app -> crear laravel
+
+php artisan --version
+composer show laravel/framework
+
+composer outdated laravel/framework
+composer update
+
+php artisan serve -> corer laravel 
+
+php artisan migrate
+php artisan migrate:rollback   -> reversa ultimo lote (down)
+php artisan migrate:refresh    -> reversa todos los lotes (down) y las vuelve a crear
+php artisan migrate:fresh   -> elimina todas las tablas y las vuelve a crear
+
+php artisan migrate:fresh --seed  -> para aser pruevas de siders.
+
+php artisan migration categories
+php artisan migration create_categories_table
+
+php artisan migration add_avatar_to_users_table
+
+php artisan make:controller HomeController
+php artisan make:model Post
+
+php artisan make:model Medicine -mf --api
+
+php artisan make:seeder UserSeeder
+
+php artisan db:seed
+
+php artisan make:factory PostFactory
+
+# Generate a model and a migration, factory, seeder, and controller...
+php artisan make:model Flight -mfsc
+
+php artisan r:l
+
+php artisan make:request StorePostRequest
+
+php artisan lang:publish
+
+composer require laravel-lang/common
+php artisan lang:add
+
+php artisan make:controller nombre_archivoController  -> para crear archivos  en le controller
+
+
+senati ---
+
+composer require laravel/ui
+
+php artisan ui bootstrap  ->aki
+
+
+npm install && npm run dev
+
+
+php artisan ui bootstrap --auth
+
+
+
+php artisan make:controller nombre_archivoController -r ->  para crer un archivo en controller
+
+
+
+admin 
+
+composer require jeroennoten/laravel-adminlte
+
+php artisan adminlte:install
+
+en las vistas  :
+
+php artisan make:view empleado
+
+Model 
+
+php artisan make:model nombre_archivoModel
+
+PDF para reportes
+
+composer require barryvdh/laravel-dompdf 
+
+
+para el que el menu no se mueva 
+ 'classes_body' => 'layout-fixed',
+
+
+
+
+php artisan make:model Nivel -mcr  ----> para crear los 3 MVC
+
+
+Roles:
+
+composer require spatie/laravel-permission
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+php artisan optimize:clear
+php artisan config:clear
+php artisan migrate
+
+
+
+
+resources/views/
+├── auth/
+│   └── login.blade.php
+└── layouts/
+    └── admin/
+        └── app.blade.php
+
+
+ User::create([
+            'name' => 'Deivid',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('12345678'),
+
+        ])

@@ -1,0 +1,71 @@
+Table bancos{
+    id int [pk, increment] //primary key 
+    descripcion varchar
+}
+
+Table monedas {
+    id int [pk, increment]
+    codigo varchar(10)
+    descripcion varchar(100)
+    simbolo varchar(10)
+    estado boolean
+}
+
+Table cuenta_bancarias {
+    id int [pk, increment]
+    banco_id int [not null, ref: > bancos.id]
+    moneda_id int [not null, ref: > monedas.id]
+    descripcion varchar(100)
+    numero varchar(50)
+    cci varchar(50)
+    saldo_inicial decimal(15,2) [default: 0]
+    mostrar_comprobante enum('Si', 'No') [default: 'No']
+}
+
+Table tarjetas {
+    id int [pk, increment]
+    codigo varchar(10)
+    descripcion varchar(100)
+}
+
+Table plataformas {
+    id int [pk, increment]
+    nombre varchar(100)
+    estado varchar(2)
+}
+
+Table metodo_pagos {
+    id int [pk, increment]
+    codigo varchar(10)
+    descripcion varchar(150)
+    condicion_pago varchar(20)
+}
+
+Table metodo_gastos {
+    id int [pk, increment]
+    descripcion varchar(150)
+}
+
+Table atributos {
+    id int [pk, increment]
+    codigo varchar(100)
+    descripcion varchar(50)
+    estado boolean
+}
+
+Table detraccions{
+    id int [pk, increment]
+    tipo_operacion varchar(10)
+    codigo varchar(10)
+    descripcion varchar(150)
+    porcentaje decimal(5,2)
+    activo boolean [default: true]
+}
+
+Table unidades {
+    id int [pk, increment]
+    codigo varchar(10)
+    descripcion varchar(100)
+    simbolo varchar(10)
+    estado enum('Si', 'No') [default: 'Si']
+}
